@@ -88,8 +88,9 @@ int number=0;
 struct list_node *check=head;
 while((check->next)!=(head)){
 number++;
+check=(check->next);
 }
-return number;
+return numebr;
 }
 
 /*	
