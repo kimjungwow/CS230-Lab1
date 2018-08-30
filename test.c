@@ -10,9 +10,7 @@ void setup_head_tail(struct list_node **head, struct list_node **tail)
 
 TEST(DoublyLinkedListTest, AllocateHeadTail) {
 	struct list_node *head, *tail;
-	printf("HEEEEELLO");
 	setup_head_tail(&head, &tail);
-iterate_print_keys(head);
 
 	//Empty Check
 	ASSERT_EQ (head->next, tail);
@@ -179,6 +177,7 @@ TEST(DoublyLinkedListTest, InsertDeleteAndCount) {
 		ASSERT_EQ(insertion_point->next, new_node);
 		insertion_point = insertion_point->next;
 	}
+	iterate_print_keys(head);
 
 	ASSERT_EQ(count_list_length(head), 10);
 
