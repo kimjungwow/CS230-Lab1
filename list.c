@@ -11,7 +11,8 @@ set the key value to the key provided by the argument
  */
 struct list_node *allocate_node_with_key(int key)
 { struct list_node *fuck;
- struct list_node *made=(list_node*)malloc(sizeof(list_node));
+ struct list_node *made;
+made=malloc(sizeof(list_node));
 
 
 made->key=key;
