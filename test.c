@@ -177,7 +177,6 @@ TEST(DoublyLinkedListTest, InsertDeleteAndCount) {
 		ASSERT_EQ(insertion_point->next, new_node);
 		insertion_point = insertion_point->next;
 	}
-	iterate_print_keys(head);
 
 	ASSERT_EQ(count_list_length(head), 10);
 
@@ -188,6 +187,8 @@ TEST(DoublyLinkedListTest, InsertDeleteAndCount) {
 		node = search_list(head, i);
 		ASSERT_TRUE(node); // Checks search_list does not return NULL
 		ASSERT_EQ(node->key, i);
+		iterate_print_keys(head);
+
 		del_node(node);
 		
 		ASSERT_EQ(count_list_length(head), i-1);
