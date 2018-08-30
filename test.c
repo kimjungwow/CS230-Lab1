@@ -240,8 +240,6 @@ TEST(DoublyLinkedListTest, InsertRandomSortedCheckSorted) {
 
 int main(int argc, char **argv)
 {
-	printf("MAN\n\n\n");
 	::testing::InitGoogleTest(&argc, argv);
-	printf("WoOMAN\n\n\n");
 	return RUN_ALL_TESTS();
 }
