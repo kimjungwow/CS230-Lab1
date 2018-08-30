@@ -10,7 +10,7 @@ void setup_head_tail(struct list_node **head, struct list_node **tail)
 
 TEST(DoublyLinkedListTest, AllocateHeadTail) {
 	struct list_node *head, *tail;
-
+	printf("HEEEEELLO");
 	setup_head_tail(&head, &tail);
 
 	//Empty Check
@@ -20,6 +20,7 @@ TEST(DoublyLinkedListTest, AllocateHeadTail) {
 	// Doubly linked list invariant
 	ASSERT_EQ (head->prev, tail);
 	ASSERT_EQ (tail->next, head);
+	iterate_print_keys(head);
 }
 
 TEST(DoublyLinkedListTest, IsInitiallyEmpty) {
