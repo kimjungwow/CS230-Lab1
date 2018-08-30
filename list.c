@@ -124,7 +124,7 @@ if((new_node->key) < (check->key)) insert_node_after(head,new_node);
 while((new_node->key)>(check->key))
 {
 if (check==(head->prev)) {
-	insert_node_after(tail->prev,new_node);
+	insert_node_after((head->prev)->prev,new_node);
 	return 1;
 }
 check=check->next;
