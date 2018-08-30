@@ -12,7 +12,7 @@ set the key value to the key provided by the argument
 struct list_node *allocate_node_with_key(int key)
 {
  struct list_node *made;
-made=malloc(sizeof(4));
+made=(list_node*)malloc(sizeof(4));
 
 
 made->key=key;
