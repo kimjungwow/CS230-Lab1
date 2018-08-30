@@ -86,7 +86,7 @@ int count_list_length (struct list_node *head)
 {
 int number=0;
 struct list_node *check=head;
-while((check->next)!=(head)){
+while((check->next)!=(tail)){
 number++;
 check=(check->next);
 }
