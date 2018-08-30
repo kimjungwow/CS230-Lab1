@@ -179,11 +179,12 @@ TEST(DoublyLinkedListTest, InsertDeleteAndCount) {
 	}
 
 	ASSERT_EQ(count_list_length(head), 10);
-
+	printf("WWWWWWWWWWWW\n\n");
 	struct list_node *node = NULL;
-
+	printf("DDDDDDDDDD\n\n\n\n");
 	// Check Search functionality
 	for (int i = 10; i > 0; i--) {
+		printf("IIIIIIIIIIIIII\n\n\n\n");
 		node = search_list(head, i);
 		printf("AAAAAAAAA\n\n");
 		ASSERT_TRUE(node); // Checks search_list does not return NULL
