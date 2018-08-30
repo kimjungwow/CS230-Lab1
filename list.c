@@ -71,7 +71,7 @@ struct list_node *search_list (struct list_node *head, int search_key)
 struct list_node *check = head->next;
 while(1>0){
 if ((check->key)==search_key) return check;
-if ((check->next)==tail) return NULL;
+if ((check->next)==(head->prev)) return NULL;
 check=check->next;
 
 }
@@ -85,7 +85,7 @@ int count_list_length (struct list_node *head)
 {
 int number=0;
 struct list_node *check=head;
-while((check->next)!=tail){
+while((check->next)!=(head->prev)){
 number++;
 }
 return number;
@@ -97,7 +97,7 @@ Return 1 if empty. Return 0 if list is not empty.
  */
 int is_list_empty (struct list_node *head)
 {
-if ((head->next)==tail) return 1;
+if ((head->next)==(head->prev)) return 1;
 return 0;
 }
 
@@ -119,17 +119,17 @@ list (including the key of the *new_node*) is always sorted (increasing order)
  */
 int insert_sorted_by_key (struct list_node *head, struct list_node *new_node)
 {
-struct list_node *check=head_next;
+struct list_node *check=head->next;
 if((new_node->key) < (check->key)) insert_node_after(head,new_node);
 while((new_node->key)>(check->key))
 {
-if (check==tail) {
+if (check==(head->prev)) {
 	insert_node_after(tail->prev,new_node);
 	return 1;
 }
 check=check->next;
 }
-insert_node_after(check-prev,new_node);
+insert_node_after(check->prev,new_node);
 return 1;
 
 
