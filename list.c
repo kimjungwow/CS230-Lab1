@@ -43,7 +43,7 @@ void insert_node_after (struct list_node *node, struct list_node *new_node)
 {
 new_node->prev=node;
 new_node->next=node->next;
-new_node->key=1;
+new_node->key=1; // How can I do this?
 new_node->value=NULL;
 
 node->next=new_node;
@@ -56,7 +56,7 @@ Remove the *node* from the list
 void del_node (struct list_node *node)
 {
 (node->prev)->next=node->next;
-(nodex->next)->prev=node->prev;
+(node->next)->prev=node->prev;
 
 }
 
@@ -69,6 +69,13 @@ You may assume that the list will only hold nodes with unique key values
  */
 struct list_node *search_list (struct list_node *head, int search_key)
 {
+struct list_node *check = head->next;
+while(){
+if ((check->key)==search_key) break;
+if ((check->next)==tail) return NULL;
+check=check->next;
+
+}
 }
 
 /*	
@@ -77,6 +84,12 @@ and return the counted value
  */
 int count_list_length (struct list_node *head)
 {
+int number=0;
+struct list_node *check=head;
+while((check->next)!=tail){
+number++;
+}
+return number;
 }
 
 /*	
@@ -85,6 +98,8 @@ Return 1 if empty. Return 0 if list is not empty.
  */
 int is_list_empty (struct list_node *head)
 {
+if ((head->next)==tail) return 1;
+return 0;
 }
 
 /*	
@@ -96,6 +111,7 @@ But make sure to test your final version with the original test.c code.
  */
 void iterate_print_keys (struct list_node *head)
 {
+
 }
 
 /*	
@@ -104,4 +120,18 @@ list (including the key of the *new_node*) is always sorted (increasing order)
  */
 int insert_sorted_by_key (struct list_node *head, struct list_node *new_node)
 {
+struct list_node *check=head_next;
+if((new_node->key) < (check->key)) insert_node_after(head,new_node);
+while((new_node->key)>(check->key))
+{
+if (check==tail) {
+	insert_node_after(tail->prev,new_node);
+	return 1;
+}
+check=check->next;
+}
+insert_node_after(check-prev,new_node);
+return 1;
+
+
 }
