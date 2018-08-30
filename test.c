@@ -185,7 +185,9 @@ TEST(DoublyLinkedListTest, InsertDeleteAndCount) {
 	// Check Search functionality
 	for (int i = 10; i > 0; i--) {
 		node = search_list(head, i);
+		printf("AAAAAAAAA\n\n");
 		ASSERT_TRUE(node); // Checks search_list does not return NULL
+		printf("BBBBBBBBB\n\n\n\n");
 		ASSERT_EQ(node->key, i);
 		iterate_print_keys(head);
 
