@@ -29,11 +29,11 @@ Also, link the head and tail to point to each other
 void initialize_list_head_tail(struct list_node *head, struct list_node *tail)
 {
 head->prev=tail;
-head->next=NULL;
+head->next=tail;
 head->key=-1;
 head->value=NULL;
 
-tail->prev=NULL;
+tail->prev=head;
 tail->next=head;
 tail->key=-1;
 tail->value=NULL;
