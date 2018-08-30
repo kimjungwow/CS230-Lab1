@@ -10,9 +10,9 @@ initialize the pointers to NULL,
 set the key value to the key provided by the argument
  */
 struct list_node *allocate_node_with_key(int key)
-{ struct list_node *fuck;
+{
  struct list_node *made;
-made=malloc(sizeof(list_node));
+made=malloc(sizeof(4));
 
 
 made->key=key;
