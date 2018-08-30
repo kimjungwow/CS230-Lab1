@@ -9,13 +9,13 @@ Allocate a node using malloc(),
 initialize the pointers to NULL,
 set the key value to the key provided by the argument
  */
-struct list_node *allocate_node_with_key(int key)
+struct list_node *allocate_node_with_key(int key2)
 {
  struct list_node *made;
 made=(list_node*)malloc(sizeof(4));
 
 
-made->key=key;
+made->key=key2;
 made->next=NULL;
 made->prev=NULL;
 made->value=NULL;
