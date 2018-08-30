@@ -14,7 +14,7 @@ struct list_node *allocate_node_with_key(int key)
 made->key=key;
 made->next=NULL;
 made->prev=NULL;
-made->value=key;
+made->value=NULL;
 return made;
 }
 
