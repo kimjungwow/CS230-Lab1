@@ -177,6 +177,7 @@ TEST(DoublyLinkedListTest, InsertDeleteAndCount) {
 		ASSERT_EQ(insertion_point->next, new_node);
 		insertion_point = insertion_point->next;
 	}
+		iterate_print_keys(head);
 
 	ASSERT_EQ(count_list_length(head), 10);
 	printf("WWWWWWWWWWWW\n\n");
