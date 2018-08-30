@@ -10,13 +10,12 @@ initialize the pointers to NULL,
 set the key value to the key provided by the argument
  */
 struct list_node *allocate_node_with_key(int key)
-{ struct list_node made;
-made.key=key;
-made.next=NULL;
-made.prev=NULL;
-made.value=key;
-struct list_node *answer=&made;
-return answer;
+{ struct list_node *made;
+made->key=key;
+made->next=NULL;
+made->prev=NULL;
+made->value=key;
+return made;
 }
 
 /*	
@@ -70,8 +69,8 @@ You may assume that the list will only hold nodes with unique key values
 struct list_node *search_list (struct list_node *head, int search_key)
 {
 struct list_node *check = head->next;
-while(){
-if ((check->key)==search_key) break;
+while(1>0){
+if ((check->key)==search_key) return check;
 if ((check->next)==tail) return NULL;
 check=check->next;
 
