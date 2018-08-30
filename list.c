@@ -25,6 +25,15 @@ Also, link the head and tail to point to each other
  */
 void initialize_list_head_tail(struct list_node *head, struct list_node *tail)
 {
+head->prev=tail;
+head->next=NULL;
+head->key=-1;
+head->value=NULL;
+
+tail->prev=NULL;
+tail->next=head;
+tail->key=-1;
+tail->value=NULL;
 }
 
 /*	
@@ -32,6 +41,13 @@ Insert the *new_node* after the *node*
  */
 void insert_node_after (struct list_node *node, struct list_node *new_node)
 {
+new_node->prev=node;
+new_node->next=node->next;
+new_node->key=1;
+new_node->value=NULL;
+
+node->next=new_node;
+
 }
 
 /*	
@@ -39,6 +55,9 @@ Remove the *node* from the list
  */
 void del_node (struct list_node *node)
 {
+(node->prev)->next=node->next;
+(nodex->next)->prev=node->prev;
+
 }
 
 /*	
