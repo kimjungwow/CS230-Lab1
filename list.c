@@ -10,11 +10,11 @@ initialize the pointers to NULL,
 set the key value to the key provided by the argument
  */
 struct list_node *allocate_node_with_key(int key)
-{ struct list_node *made;
+{ struct list_node *made=malloc(sizeof(int));
 made->key=key;
 made->next=NULL;
 made->prev=NULL;
-made->value=(void*)malloc(sizeof(int));
+made->value=NULL;
 return made;
 }
 
@@ -42,9 +42,6 @@ void insert_node_after (struct list_node *node, struct list_node *new_node)
 {
 new_node->prev=node;
 new_node->next=node->next;
-new_node->key=1; // How can I do this?
-new_node->value=NULL;
-
 node->next=new_node;
 
 }
@@ -131,12 +128,12 @@ while((new_node->key)>(check->key))
 {
 if (check==(head->prev)) {
 	insert_node_after((head->prev)->prev,new_node);
-	return 1;
+	return 0;
 }
 check=check->next;
 }
 insert_node_after(check->prev,new_node);
-return 1;
+return 0;
 
 
 }
