@@ -116,7 +116,7 @@ do{i++;
 printf("This is %d one\n",i);
 printf("The key is %d\n\n",(temp->key));
 temp=(temp->next);
-}while((temp->next)!=head)
+}while((temp->next)!=head);
 }
 
 /*	
