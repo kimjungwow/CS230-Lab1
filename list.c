@@ -90,7 +90,7 @@ while((check->next)!=(head)){
 number++;
 check=(check->next);
 }
-return numebr;
+return number;
 }
 
 /*	
