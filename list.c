@@ -128,7 +128,7 @@ list (including the key of the *new_node*) is always sorted (increasing order)
  */
 int insert_sorted_by_key (struct list_node *head, struct list_node *new_node)
 {
-if(is_list_empty)
+if(is_list_empty(head))
 {
  insert_node_after(head,new_node);
  return 0;
