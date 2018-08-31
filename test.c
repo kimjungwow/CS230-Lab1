@@ -214,7 +214,8 @@ TEST(DoublyLinkedListTest, InsertRandomSortedCheckSorted) {
 	struct list_node *node = head->next;
 	int prev_key = head->key;
 	int sum_inserted_keys = 0;
-	iterate_print_keys(head);
+	
+
 	
 	while (node != tail) {
 		ASSERT_LT(prev_key, node->key);
@@ -224,7 +225,7 @@ TEST(DoublyLinkedListTest, InsertRandomSortedCheckSorted) {
 		prev_key = node->key;
 		node = node->next;
 	}
-	printf("LOOOP\n\n");
+	
 	ASSERT_EQ(sum_of_inserted, sum_inserted_keys);
 
 	// Doubly linked list invariant
