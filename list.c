@@ -44,6 +44,7 @@ Insert the *new_node* after the *node*
  */
 void insert_node_after (struct list_node *node, struct list_node *new_node)
 {
+(node->next)->prev=new_node;
 new_node->prev=node;
 new_node->next=node->next;
 node->next=new_node;
