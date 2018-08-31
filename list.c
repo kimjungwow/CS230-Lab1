@@ -127,8 +127,12 @@ list (including the key of the *new_node*) is always sorted (increasing order)
  */
 int insert_sorted_by_key (struct list_node *head, struct list_node *new_node)
 {
+if(is_list_empty)
+{
+ insert_node_after(head,new_node);
+ return 0;
+}
 struct list_node *check=head->next;
-if((new_node->key) < (check->key)) insert_node_after(head,new_node);
 while((new_node->key)>(check->key))
 {
 if (check==(head->prev)) {
