@@ -204,17 +204,17 @@ TEST(DoublyLinkedListTest, InsertRandomSortedCheckSorted) {
 	int sum_of_inserted = 0;
 
 	struct list_node *head, *tail;
-
+	printf("AAAAAA\n\n\n");
 	setup_head_tail(&head, &tail);
-
+	printf("BAAAA\n\n\n");
 	for (int i = 0; i < num_random_vals; i++) {
 		struct list_node *new_node = allocate_node_with_key(random_vals[i]);
 		insert_sorted_by_key(head, new_node);
 		sum_of_inserted += new_node->key;
 	}
-
+	printf("CCCC\n\n\n");	
 	ASSERT_EQ(count_list_length(head), 20);
-
+	printf("DDDD\n\n");
 	struct list_node *node = head->next;
 	int prev_key = head->key;
 	int sum_inserted_keys = 0;
@@ -227,7 +227,7 @@ TEST(DoublyLinkedListTest, InsertRandomSortedCheckSorted) {
 		prev_key = node->key;
 		node = node->next;
 	}
-
+	printf("LOOOP\n\n");
 	ASSERT_EQ(sum_of_inserted, sum_inserted_keys);
 
 	// Doubly linked list invariant
