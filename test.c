@@ -10,6 +10,7 @@ void setup_head_tail(struct list_node **head, struct list_node **tail)
 
 TEST(DoublyLinkedListTest, AllocateHeadTail) {
 	struct list_node *head, *tail;
+
 	setup_head_tail(&head, &tail);
 
 	//Empty Check
@@ -179,13 +180,14 @@ TEST(DoublyLinkedListTest, InsertDeleteAndCount) {
 	}
 
 	ASSERT_EQ(count_list_length(head), 10);
+
 	struct list_node *node = NULL;
+
 	// Check Search functionality
 	for (int i = 10; i > 0; i--) {
 		node = search_list(head, i);
 		ASSERT_TRUE(node); // Checks search_list does not return NULL
 		ASSERT_EQ(node->key, i);
-
 		del_node(node);
 		
 		ASSERT_EQ(count_list_length(head), i-1);
@@ -204,19 +206,21 @@ TEST(DoublyLinkedListTest, InsertRandomSortedCheckSorted) {
 	int sum_of_inserted = 0;
 
 	struct list_node *head, *tail;
+
 	setup_head_tail(&head, &tail);
+
 	for (int i = 0; i < num_random_vals; i++) {
 		struct list_node *new_node = allocate_node_with_key(random_vals[i]);
 		insert_sorted_by_key(head, new_node);
 		sum_of_inserted += new_node->key;
 	}
+
 	ASSERT_EQ(count_list_length(head), 20);
+
 	struct list_node *node = head->next;
 	int prev_key = head->key;
 	int sum_inserted_keys = 0;
-	
 
-	
 	while (node != tail) {
 		ASSERT_LT(prev_key, node->key);
 
@@ -225,7 +229,7 @@ TEST(DoublyLinkedListTest, InsertRandomSortedCheckSorted) {
 		prev_key = node->key;
 		node = node->next;
 	}
-	
+
 	ASSERT_EQ(sum_of_inserted, sum_inserted_keys);
 
 	// Doubly linked list invariant
