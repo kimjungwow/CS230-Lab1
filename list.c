@@ -137,7 +137,7 @@ struct list_node *check=head->next;
 while((new_node->key)>(check->key))
 {
 if (check==(head->prev)) {
-	insert_node_after((head->prev)->prev,new_node);
+	insert_node_after(check->prev,new_node);
 	return 0;
 }
 check=check->next;
