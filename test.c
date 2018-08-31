@@ -233,6 +233,7 @@ TEST(DoublyLinkedListTest, InsertRandomSortedCheckSorted) {
 	// Doubly linked list invariant
 	ASSERT_EQ (head->prev, tail);
 	ASSERT_EQ (tail->next, head);
+	iterate_print_keys(head);
 }
 
 int main(int argc, char **argv)
